@@ -53,6 +53,17 @@ app.get("/api/knjige/:id", (request, response) => {
     //response.send("jedna knjiga "+id);
 });
 
+app.get("/api/rezervacija", (req, res) => {
+  const query =
+    "    SELECT knjiga.naslov, knjiga.autor, korisnik.ime AS korisnik, rezervacija.datum_rez FROM rezervacija " +
+    "JOIN knjiga ON rezervacija.knjiga = knjiga.id JOIN korisnik ON rezervacija.korisnik = korisnik.id;";
+  connection.query(query, (error, results) => {
+    if (error) throw error;
+    res.send(results);
+  });
+});
+
+
 app.post("/api/rezerv_knjige", (request, response) => {
     const data = request.body;
     rezervacija = [[data.datum, data.id_knjiga, data.id_korisnik]]

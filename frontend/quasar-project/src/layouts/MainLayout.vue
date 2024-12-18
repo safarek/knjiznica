@@ -59,7 +59,7 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const leftDrawerOpen = ref(false)
-const linksList = 
+const linksList =
 [
   {
     title: 'Naslovnica',
@@ -108,6 +108,12 @@ const linksList =
     caption: 'Baza',
     icon: 'search',
     link: '/baza'
+  },
+  {
+    title: 'Rezervirane knjige',
+    caption: 'Rezervirane knjige',
+    icon: 'book',
+    link: '/Rezervacija'
   }
 ]
 

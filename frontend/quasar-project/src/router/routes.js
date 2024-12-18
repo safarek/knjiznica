@@ -10,7 +10,8 @@ const routes = [
       { path: 'lokacija', component: () => import('pages/LokacijaPage.vue') }, // Lokacija
       { path: 'login', component: () => import('pages/LoginPage.vue') }, // Login
       { path: 'registracija', component: () => import('pages/RegistracijaPage.vue') }, // Registracija
-      { path: 'baza', component: () => import('pages/PopisKnjigaBazaPage.vue') }
+      { path: 'baza', component: () => import('pages/PopisKnjigaBazaPage.vue') },
+      {path: "/Rezervacija",component: () => {return import("pages/RezervacijaPage.vue")}},
     ]
   },
   {
